@@ -1,29 +1,72 @@
-# Ruby for Beginners
-Repositório voltado para iniciantes na programação que desejam aprender Ruby como linguagem de programação.
+# Ruby Labs
 
+Repositorio voltado para iniciantes na programacao que desejam aprender Ruby como linguagem de programacao.
 
-## Entendendo a liguagem
+## O que voce vai encontrar
 
-### Tutorial Gamificado
+- Anotacoes sobre fundamentos de Ruby
+- Materiais introdutorios para automacao de testes com Ruby
+- Exercicios para fixar conceitos
+- Projetos pequenos para praticar
 
-[Try Ruby](https://try.ruby-lang.org/)
+## Estrutura do repositorio
 
-### Recomendação de cursos
+```text
+ruby-labs/
+├── src/content/docs/   -> Anotacoes e estudos publicados no site
+├── examples/           -> Exemplos de codigo, exercicios e projetos praticos
+└── .github/            -> Workflows, templates e guias de contribuicao
+```
 
-[Aprendendo o que é Ruby](https://web.dio.me/course/aprendendo-o-que-e-ruby) • Digital Innovation One
+## Como usar
 
-[Ruby: Introdução a Orientacao a Objetos](https://web.dio.me/course/ruby-introducao-a-orientacao-a-objetos) • Digital Innovation One
+1. Comece pelas notas em `src/content/docs/`
+2. Leia [Introducao ao Ruby](src/content/docs/01-introducao-ruby.md)
+3. Avance para [Ruby para Automacao de Testes](src/content/docs/02-ruby-para-automacao-de-testes.md)
+4. Resolva os desafios em `examples/exercises.md`
+5. Experimente o projeto em `examples/projects.md`
 
+## Rodando localmente
 
+```bash
+npm install
+npm run dev
+```
 
-## Ruby para automação de testes
+O servidor local fica em `http://localhost:4321`.
 
-### Recomendação de palestras
+Outros comandos uteis:
 
-[Testes de API's usando Ruby + HTTParty e RSpec - Jeremias Araújo](https://youtu.be/UxM3AMLAdEw) • Iterasys
+```bash
+npm run build
+npm run preview
+```
 
+Versao publicada:
 
-### Recomendação de cursos
+`https://caramelotech.github.io/ruby-labs`
 
-[Mini curso de testes Ruby com Rspec](https://www.youtube.com/watch?v=eb2VaG9bfSE&list=PLdDT8if5attGc3fgFsFe5cvV9MwlVFNLW) • One Bit Code
+## Adicionando notas
 
+Novas anotacoes devem ser criadas em `src/content/docs/`.
+
+Exemplo de frontmatter padrao Starlight:
+
+```md
+---
+title: "Titulo da nota"
+description: "Resumo curto explicando o foco da pagina."
+lastUpdated: 2026-01-01
+sidebar:
+  order: 3
+tags: ["ruby", "tema", "iniciante"]
+---
+```
+
+## Contribuicao
+
+Contribuicoes sao bem-vindas. Veja o [Guia de Contribuicao](.github/CONTRIBUTING.md) para detalhes.
+
+## Licenca
+
+MIT

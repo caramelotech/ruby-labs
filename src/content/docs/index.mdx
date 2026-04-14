@@ -1,0 +1,35 @@
+---
+title: Ruby Labs
+description: Repositorio voltado para iniciantes na programacao que desejam aprender Ruby como linguagem de programacao.
+template: splash
+hero:
+  tagline: Repositorio voltado para iniciantes na programacao que desejam aprender Ruby como linguagem de programacao.
+  actions:
+    - text: Comecar agora
+      link: /ruby-labs/01-introducao-ruby/
+      icon: right-arrow
+      variant: primary
+    - text: GitHub
+      link: https://github.com/caramelotech/ruby-labs
+      icon: github
+      variant: minimal
+sidebar:
+  hidden: true
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+  <Card title="Notas" icon="open-book">
+    Conceitos explicados de forma clara e progressiva, do basico ao avancado.
+  </Card>
+  <Card title="Exemplos" icon="rocket">
+    Espaco para exemplos praticos e trilhas de estudo sobre Ruby.
+  </Card>
+  <Card title="Exercicios" icon="pencil">
+    Desafios para consolidar o aprendizado. Disponiveis em `examples/exercises.md`.
+  </Card>
+  <Card title="Projetos" icon="star">
+    Projetos completos para aplicar tudo que foi aprendido. Disponiveis em `examples/projects.md`.
+  </Card>
+</CardGrid>
