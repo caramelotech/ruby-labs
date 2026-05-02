@@ -2,17 +2,36 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
 export default defineConfig({
-  site: 'https://caramelotech.github.io',
+  site: 'https://caramelotech.com.br',
   base: '/ruby-labs',
   integrations: [
     starlight({
-      title: 'Ruby Labs',
+      title: 'Caramelo Tech',
       customCss: ['./src/styles/custom.css'],
       social: [
         {
           icon: 'github',
           label: 'GitHub',
-          href: 'https://github.com/caramelotech/ruby-labs',
+          href: 'https://github.com/caramelotech',
+        },
+        {
+          icon: 'linkedin',
+          label: 'LinkedIn',
+          href: 'https://www.linkedin.com/company/caramelotech/',
+        },
+        {
+          icon: 'instagram',
+          label: 'Instagram',
+          href: 'https://www.instagram.com/caramelo_tech/',
+        },
+      ],
+      sidebar: [
+        {
+          label: 'Ruby',
+          items: [
+            { slug: '01-introducao-ruby' },
+            { slug: '02-ruby-para-automacao-de-testes' },
+          ],
         },
       ],
       defaultLocale: 'root',

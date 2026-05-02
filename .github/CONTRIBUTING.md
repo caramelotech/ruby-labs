@@ -41,6 +41,19 @@ O site fica disponivel em `http://localhost:4321`.
 - Use frontmatter Starlight completo
 - Prefira explicacoes curtas e progressivas
 
+**`sidebar.order` e sequencial por diretorio**, nao global. A ordem entre secoes e controlada pelo array `sidebar` em `astro.config.mjs`. Dentro de cada pasta, numere os arquivos a partir de 1.
+
+Para adicionar uma nova secao superior (ex: `nova-categoria/`):
+1. Crie o diretorio em `src/content/docs/nova-categoria/`
+2. Adicione um arquivo `index.md` como pagina de entrada
+3. Adicione uma entrada `autogenerate` em `astro.config.mjs`:
+   ```javascript
+   {
+     label: "Titulo da Secao",
+     autogenerate: { directory: "nova-categoria" },
+   }
+   ```
+
 ### Exemplos em `examples/`
 
 - Mantenha os exercicios e projetos atualizados
