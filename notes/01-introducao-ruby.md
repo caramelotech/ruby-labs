@@ -1,11 +1,4 @@
----
-title: "Introducao ao Ruby"
-description: "Conheca recursos recomendados para comecar com Ruby e entender seus primeiros passos na linguagem."
-lastUpdated: 2026-04-14
-sidebar:
-  order: 1
-tags: ["ruby", "introducao", "iniciante", "linguagem"]
----
+# Introducao ao Ruby
 
 Ruby e uma linguagem bastante amigavel para quem esta dando os primeiros passos em programacao, especialmente quando a ideia e aprender sintaxe clara, orientacao a objetos e produtividade.
 

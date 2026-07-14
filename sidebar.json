@@ -1,0 +1,7 @@
+{
+  "sections": [
+    { "label": "Visão geral", "slug": "." },
+    { "slug": "01-introducao-ruby" },
+    { "slug": "02-ruby-para-automacao-de-testes" }
+  ]
+}

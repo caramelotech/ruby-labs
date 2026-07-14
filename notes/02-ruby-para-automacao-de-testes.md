@@ -1,11 +1,4 @@
----
-title: "Ruby para Automacao de Testes"
-description: "Explore palestras e cursos introdutorios para usar Ruby em testes de API e automacao."
-lastUpdated: 2026-04-14
-sidebar:
-  order: 2
-tags: ["ruby", "testes", "automacao", "qa"]
----
+# Ruby para Automacao de Testes
 
 Ruby tambem e uma linguagem bastante usada para automacao de testes, especialmente em suites de API, testes end-to-end e pipelines de validacao.
 
