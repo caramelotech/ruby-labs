@@ -1,18 +1,27 @@
 ## O que este PR faz?
 
-## Tipo de mudanca
+<!-- Descreva de forma clara e objetiva o que foi adicionado, alterado ou corrigido. -->
 
-- [ ] Nova anotacao (`src/content/docs/`)
+## Tipo de mudança
+
+- [ ] Nova anotação (`notes/`)
 - [ ] Novo exemplo (`examples/`)
-- [ ] Novo exercicio (`examples/exercises.md`)
+- [ ] Novo exercício (`examples/exercises.md`)
 - [ ] Novo projeto (`examples/projects.md`)
-- [ ] Correcao de conteudo existente
-- [ ] Melhoria no site (Astro/Starlight)
+- [ ] Correção de conteúdo existente
 - [ ] Outro: <!-- descreva -->
 
 ## Checklist
 
-- [ ] O conteudo esta em portugues
-- [ ] Os arquivos estao no diretorio correto
-- [ ] As notas usam frontmatter Starlight valido, quando aplicavel
-- [ ] Links internos foram revisados
+- [ ] O conteúdo está em português
+- [ ] Os arquivos estão no diretório correto
+- [ ] Notas novas começam com `# Título` na primeira linha (sem frontmatter)
+- [ ] Nova subpasta de tema foi adicionada em `sidebar.json` (se aplicável)
+- [ ] Links internos estão funcionando
+- [ ] Exercícios e projetos têm objetivo e critérios de sucesso descritos
+- [ ] Minha branch está atualizada com `main`
+- [ ] Não há conflitos de merge
+
+## Contexto adicional
+
+<!-- Alguma decisão de design, referência externa ou ponto que o revisor deve saber? Deixe em branco se não houver. -->

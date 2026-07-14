@@ -1,60 +1,50 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Orientações para agentes de IA que trabalham neste repositório.
 
-## Overview
+## Visão geral
 
-Ruby Labs é um repositório educacional voltado para iniciantes em programação que desejam aprender Ruby - tanto a linguagem em si quanto seu uso em automação de testes. O site é gerado com Astro + Starlight e publicado em `https://caramelotech.com.br/ruby-labs/`.
+Repositório de **conteúdo puro** do Ruby Labs (Caramelo Tech). Contém apenas notas em Markdown - não há build, dependências, testes ou linting.
 
-## Commands
+As notas são publicadas no site do Caramelo Labs em `https://caramelotech.com.br/labs/ruby/`. Quem monta e publica o site é o repositório hub [labs](https://github.com/caramelotech/labs): a cada push em `main` que altere `notes/` ou `sidebar.json`, o workflow `.github/workflows/notify-hub.yml` dispara o rebuild do hub via `repository_dispatch`.
 
-```bash
-npm install       # instala dependências
-npm run dev       # servidor local em http://localhost:4321
-npm run build     # build de produção
-npm run preview   # visualiza o build localmente
+## Estrutura
+
+```
+notes/           # Notas em Markdown puro - cada arquivo vira uma página no site
+  index.md       # Página de entrada do lab no site
+  01-introducao-ruby.md
+  02-ruby-para-automacao-de-testes.md
+sidebar.json     # Seções da barra lateral no site (labels e ordem)
+examples/        # Exercícios e projetos práticos (não publicados no site)
 ```
 
-## Architecture
+## Escrevendo notas
 
-- `src/content/docs/` - anotações e estudos publicados no site (Markdown/MDX)
-- `examples/` - exemplos de código, exercícios e projetos práticos (não publicados no site)
-- `astro.config.mjs` - configuração do Astro e Starlight (sidebar, social links, base path)
-- `src/styles/custom.css` - customizações visuais
+As notas NÃO usam frontmatter. Regras:
 
-## Deployment
+- **A primeira linha da nota deve ser o título como `# H1`** - no site, ela vira o `title` da página (o hub injeta o frontmatter automaticamente)
+- Use `##` e `###` para as demais seções (apenas um `#` por arquivo, na primeira linha)
+- Prefixo numérico no nome do arquivo controla a ordem na barra lateral dentro da pasta: `01-nome.md`, `02-nome.md`
+- Imagens ficam junto das notas (ex: `notes/secao/assets/img.png`), referenciadas com caminho relativo em sintaxe Markdown: `![descrição](./assets/img.png)` - nunca use tags HTML `<img>` nem caminhos absolutos
+- Links para outras notas do site usam o caminho completo: `/labs/ruby/<secao>/<nota>/`
+- Frontmatter ainda é aceito para campos extras (`description`, `tags`), mas o padrão é não usar
 
-O deploy é feito automaticamente via GitHub Actions ao fazer push em `main`. O workflow está em `.github/workflows/deploy.yml`. O campo `base: '/ruby-labs'` em `astro.config.mjs` deve ser mantido - todos os links internos precisam incluir esse prefixo.
+### Nova seção de tema
 
-## Content conventions
-
-- Idioma: português (pt-BR)
-- Frontmatter obrigatório:
-  ```md
-  ---
-  title: "Título da nota"
-  description: "Resumo curto explicando o foco da página."
-  lastUpdated: 2026-01-01
-  sidebar:
-    order: 1
-  tags: ["ruby", "tema", "iniciante"]
-  ---
-  ```
-- Não repita o `title` como `# h1` - o Starlight renderiza automaticamente
-- Use `##` e `###` para seções
-- Prefira explicações curtas e progressivas
-
-## sidebar.order rule
-
-**`sidebar.order` é sequencial por diretório**, não global. A ordem entre seções é controlada pelo array `sidebar` em `astro.config.mjs`. Dentro de cada pasta, numere os arquivos a partir de 1.
-
-Para adicionar uma nova seção superior (ex: `nova-categoria/`):
-1. Crie o diretório em `src/content/docs/nova-categoria/`
-2. Adicione um arquivo `index.md` como página de entrada
-3. Adicione uma entrada `autogenerate` em `astro.config.mjs`:
-   ```javascript
-   {
-     label: "Título da Seção",
-     autogenerate: { directory: "nova-categoria" },
-   }
+1. Crie a subpasta em `notes/nova-secao/` com as notas
+2. Adicione a seção em `sidebar.json`:
+   ```json
+   { "label": "Título da Seção", "directory": "nova-secao" }
    ```
+
+## Convenções e preferências
+
+- Idioma: português brasileiro (pt-BR)
+- Usar hífens (-) em vez de travessões (—) em todos os textos
+- Em Markdown, NÃO usar `---` para separar seções (exceto para notas/atribuições no final do arquivo)
+- **Git:** Nunca fazer `git commit` ou `git push` automaticamente - apenas quando explicitamente solicitado
+
+## Recursos úteis
+
+- [labs (hub)](https://github.com/caramelotech/labs) - estrutura do site, script de fetch e deploy
